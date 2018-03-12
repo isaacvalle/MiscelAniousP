@@ -1,3 +1,23 @@
 page-home {
+    img{
+      width: 55%;
+      height: auto;
+      margin-bottom: 5%;
+    }
 
+    .icon-inicio{
+      font-size: 40px;
+      color: #000;
+    }
+    ion-input{
+      font-size: 20px;
+    }
+
+    .btn-ingresar{
+      margin-top: 10%;
+    }
+
+    .btn-registrar{
+      margin-top: 20%;
+    }
 }

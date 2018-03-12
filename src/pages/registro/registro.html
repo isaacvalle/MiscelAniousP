@@ -1,0 +1,59 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>REGISTRO</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+      <ion-item>
+          <ion-label stacked><p class="lb">Nombre</p></ion-label>
+          <ion-input type="text" [(ngModel)]="nombre" required></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+          <ion-label stacked><p class="lb">Email</p></ion-label>
+          <ion-input type="email" required [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label stacked><p class="lb">Usuario</p></ion-label>
+          <ion-input type="text" required [(ngModel)]="usuario"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label stacked><p class="lb">Contraseña</p></ion-label>
+          <ion-input type="password" required [(ngModel)]="contrasena"></ion-input>
+      </ion-item>
+
+      <p class="parrafo" *ngIf="contrasena.length < 5"> La contrasña tiene que ser mayor a 5 caracteres!</p>
+
+
+      <ion-item>
+          <ion-label stacked><p class="lb">Repetir contraseña</p></ion-label>
+          <ion-input type="password" required [(ngModel)]="confcontrasena"></ion-input>
+      </ion-item>
+
+
+
+
+
+<ion-buttons end>
+<button ion-button
+        [disabled]="contrasena.length < 5"
+        color="danger"
+        (click)="registrar()">
+
+    REGISTRAR
+</button>
+</ion-buttons>
+
+
+</ion-content>

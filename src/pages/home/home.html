@@ -1,14 +1,41 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+        Bienvenido
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding text-center>
+
+  <img src="assets/img/telefono-inteligente.png">
+
+
+      <ion-item>
+
+          <ion-label><ion-icon ios="ios-person" md="md-person" class="icon-inicio"></ion-icon></ion-label>
+          <ion-input type="text" placeholder="Usuario" [(ngModel)]="usuario" required></ion-input>
+
+      </ion-item>
+
+      <ion-item>
+
+          <ion-label><ion-icon ios="ios-lock" md="md-lock" class="icon-inicio"></ion-icon></ion-label>
+          <ion-input type="password" placeholder="Contraseña" [(ngModel)]="contrasena" required></ion-input>
+
+      </ion-item>
+
+
+      <button ion-button class="btn-ingresar" outline (click)="ingresar()">INGRESAR</button><br>
+
+
+      <button ion-button
+              class="btn-registrar"
+              color="secondary"
+              [navPush]="paginaRegistro">
+
+              REGISTRATE
+      </button>
+
+
 </ion-content>
