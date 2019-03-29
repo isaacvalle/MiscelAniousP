@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {CatalogoProvider, UsuarioProvider} from '../../providers/index.providers';
+
+import {PorCategoriaPage } from '../index.paginas';
 
 
 @Component({
@@ -8,11 +11,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class CatalogoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  porcategoPagina:any = PorCategoriaPage;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _cp: CatalogoProvider, private _up: UsuarioProvider) {
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CatalogoPage');
+  ionViewWillEnter(){
+    this._cp.cargar_catalogo();
   }
+
 
 }

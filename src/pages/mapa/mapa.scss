@@ -1,0 +1,42 @@
+page-mapa {
+  ion-header {
+    .toolbar {
+      position: absolute;
+
+      .toolbar-background {
+        background: transparent;
+      }
+      .toolbar-title {
+        color: black;
+      }
+      .back-button-icon-md {
+        color: white;
+      }
+      .back-button-icon-ios{
+        color: white;
+      }
+    }
+  }
+
+  .btn{
+    height: 35px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 0px;
+  }
+
+  .full{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  ion-row{
+    padding: 0px;
+  }
+
+  #map{
+    display: flex;
+    align-items: flex-end;
+  }
+
+}

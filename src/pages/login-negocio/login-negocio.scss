@@ -1,0 +1,69 @@
+page-login-negocio {
+  ion-header {
+    .toolbar {
+      position: absolute;
+
+      .toolbar-background {
+        background: transparent;
+      }
+      .toolbar-title {
+        color: white;
+      }
+      .back-button-icon-md {
+        color: white;
+      }
+      .back-button-icon-ios{
+        color: white;
+      }
+    }
+  }
+
+  ion-content{
+    background-image:url('https://picsum.photos/1900/1200/?blur&gravity=east&image=827');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+  }
+
+  img{
+    width: 75%;
+    height: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  ion-input{
+    color: white;
+    border-bottom-color: white;
+    box-shadow: none;
+    font-size: 20px;
+  }
+
+  #lb{
+    font-size: 20px;
+    color: white;
+    // font-weight: bold;
+    margin-bottom: 0px;
+    font-weight: bold;
+  }
+
+  #transparent{
+    padding:0px !important;
+    border-bottom:none !important;
+    border-top:none;
+    // font-size:14px;
+    margin-top:10px;
+    background: none;
+    border-bottom: 5px solid white;
+    box-shadow: none;
+  }
+
+  .btn-ingresar{
+    // background-color: #0f4471;
+    margin-top: 20px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+}

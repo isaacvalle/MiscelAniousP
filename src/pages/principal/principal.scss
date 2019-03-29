@@ -1,3 +1,51 @@
 page-principal {
+  .fondo{
+    background-color: #f6f6f6;
+  }
+
+  // .ios, .md {
+  //     page-home {
+  //         .scroll-content {
+  //             background-color: map-get($colors, light);
+  //         }
+  //
+  //         ion-card-header {
+  //             font-weight: bold;
+  //         }
+  //     }
+  // }
+
+  .textoNombre{
+    margin-top: 5%;
+  }
+
+  #title{
+    color: #626262;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  #mark{
+    // margin-right: 10px;
+    color: #F48434;
+  }
+
+  #search{
+    color: #F48434;
+  }
+
+  #close{
+    color: #F48434;
+  }
+
+  #logout{
+    color: #F48434;
+  }
+
+  #user{
+    color: #626262;
+  }
 
 }

@@ -14,3 +14,72 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@font-face{
+  font-family: Montserrat;
+  src: url("../assets/fonts/montserrat.woff2");
+}
+@font-face{
+  font-family: Cards;
+  src: url("../assets/fonts/cards.woff2");
+}
+@font-face{
+  font-family: Hind;
+  src: url("../assets/fonts/hind.woff2");
+}
+
+*{
+  font-family: Montserrat;
+}
+
+
+ion-icon {
+  &[class*="custom-"] {
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: 1em;
+    height: 1em;
+  }
+
+  //USAR mask-image PARA ICONOS EN BLANCO Y NEGRO
+  //USAR background-image PARA ICONOS A COLOR
+  &[class*="custom-coin"] {
+    mask-image: url(../assets/img/money-bill-alt.svg);
+  }
+  &[class*="custom-minus"] {
+    mask-image: url(../assets/img/minus.svg);
+  }
+  &[class*="custom-plus"] {
+    mask-image: url(../assets/img/plus.svg);
+  }
+  &[class*="custom-mark"] {
+    mask-image: url(../assets/img/map-marker-alt.svg);
+  }
+  &[class*="custom-pay"] {
+    background-image: url(../assets/img/wallet.svg);
+  }
+  &[class*="custom-charge"] {
+    background-image: url(../assets/img/cobro.svg);
+  }
+  &[class*="custom-like"] {
+    background-image: url(../assets/img/smartphone.svg);
+  }
+  &[class*="custom-view"] {
+    background-image: url(../assets/img/analytics.svg);
+  }
+  &[class*="custom-transfer"] {
+    background-image: url(../assets/img/mobile-transfer.svg);
+  }
+  &[class*="custom-calendar"] {
+    mask-image: url(../assets/img/calendar-alt-solid.svg);
+  }
+  &[class*="custom-smile"] {
+    mask-image: url(../assets/img/smile-regular.svg);
+  }
+
+}
+
+.fondoMenu{
+  background-color: #f4f4f4;
+}

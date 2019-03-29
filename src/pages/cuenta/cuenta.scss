@@ -1,3 +1,92 @@
 page-cuenta {
+  .fondo{
+    background-color: #f6f6f6;
+  }
+
+  ion-card.qr{
+    width: 55%;
+    margin: 0 auto;
+    margin-top: 15% !important;
+    // height: auto;
+    // margin: 0 auto;
+    // margin-top: 20%;
+  }
+
+  .titulo{
+    border-bottom: solid 3px #F48434;
+    height: 33px;
+    color: #393e46;
+  }
+  .info{
+    border-top: solid 1px #ddd;
+  }
+  .tabla{
+    background-color: #eeeeee;
+    // padding: 0px 16px;
+  }
+
+  .subt{
+    font-weight: bold;
+    color: #393e46;
+    font-size: 1.2em;
+  }
+
+  .socialM{
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .insta{
+    background: linear-gradient(to right, #833ab4 0%, #fd1d1d 51%, #fcb045 100%);
+  }
+
+  .card{
+    // width: 80%;
+    // margin: 0 auto;
+    margin-top: 15% !important;
+    border-radius: 2%;
+    background: rgba(0,0,0, 0.7);
+  }
+
+  .card-title {
+    // position: absolute;
+    // top: 10%;
+    font-size: 1.5em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle {
+    font-size: 1.2em;
+    width: 100%;
+    color: #fff;
+  }
+
+  ion-icon.dar {
+    font-size: 8px; //Preferred size here
+    position: absolute;
+    top: 50%;
+    transform: translate(10%, -50%);
+  }
+  ion-icon.quitar {
+    font-size: 8px; //Preferred size here
+    position: absolute;
+    top: 50%;
+    transform: translate(10%, -50%);
+  }
+  ion-icon.coin {
+    font-size: 23px; //Preferred size here
+    position: absolute;
+    top: 50%;
+    transform: translate(45%, -50%);
+    //background-color:	#3CB371;
+  }
+
+  ion-col.fecha {
+    margin: auto;
+  }
 
 }

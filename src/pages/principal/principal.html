@@ -2,17 +2,102 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>principal</ion-title>
+    <ion-buttons left>
+      <!-- <button color="naranja" ion-button [menuToggle]="menuActive()">
+        <ion-icon name="menu"></ion-icon>
+      </button> -->
+      <!-- <button ion-button
+              icon-only
+              (click)="Marker()">
+        <ion-icon id="mark" name="custom-mark"></ion-icon>
+      </button> -->
+
+      <button ion-button
+              (click)="btnBuscar()">
+        <lottie-animation-view
+          [options]="lottieConfig"
+          [width]="30"
+          [height]="30"
+          (animCreated)="handleAnimation($event)">
+        </lottie-animation-view>
+      </button>
+    </ion-buttons>
+
+    <ion-title><p id="title">MAP</p></ion-title>
+
+    <ion-buttons end>
+      <button ion-button
+              icon-only
+              *ngIf="_up.activo()"
+              (click)="salir()">
+
+        <ion-icon id="logout" name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="fondo">
 
-<div text-center>
-  <h4><strong>Bienvenido</strong></h4>
-  <h4><strong>{{_up.nombre}}</strong></h4>
-</div>
+  <ion-searchbar (ionInput)="buscar_negocios($event)" *ngIf="banBuscar%2 == 0" color="danger"
+                 animated="true"
+                 showCancelButton="true"
+                 cancelButtonText="Cancelar"
+                 placeholder="Buscar negocios">
+  </ion-searchbar>
 
+  <ion-list *ngIf="banBuscar%2 == 0">
+    <ion-item *ngFor="let item of _np.resultado"
+              [navPush]="paginaInfoNegocio"
+              [navParams]="{infonegocio: item}">
+      {{ item.negocio }}
+    </ion-item>
+  </ion-list>
+
+  <ion-item *ngIf="banMarker%2 == 0">
+    <ion-label>Estado</ion-label>
+    <ion-select [(ngModel)]="estado" (ionChange)="guardarEstado()">
+      <ion-option value="{{item.estado}}" *ngFor="let item of _cp.estados">{{item.estado}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item *ngIf="banMarker%2 == 0 && estado">
+    <ion-label>Municipio</ion-label>
+    <ion-select [(ngModel)]="municipio" (ionChange)="guardarMunicipio()">
+      <ion-option value="{{item.nombre_municipio}}" *ngFor="let item of _cp.municipios">{{item.nombre_municipio}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-refresher (ionRefresh)="recargar_pagina($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div style="height:25%;">
+  <ion-slides *ngIf="_sp.anuncios && _sp.anuncios.length" (ionSlideDidChange)="slideChanged()" autoplay="5000" loop="true" speed="3000">
+    <ion-slide *ngFor="let item of _sp.anuncios">
+      <img [src]="item.img | imagen"/>
+    </ion-slide>
+  </ion-slides>
+  </div>
+
+  <div text-center class ="textoNombre">
+    <h2 id="user"><strong>{{_up.nombre}}</strong></h2>
+  </div>
+
+  <div class="chart-container" style="position: relative; height:40vh; width:80vw; margin: auto;">
+    <canvas id="myChart" width="800" height="860" #doughnutCanvas></canvas>
+  </div>
+
+  <!-- <div id="player">
+    <p>Speed: x{{animationSpeed}}</p>
+    <div class="range-container">
+      <input #range type="range" value="1" min="0" max="3" step="0.5"
+        (change)="setSpeed(range.value)">
+    </div>
+    <button (click)="stop()">stop</button>
+    <button (click)="pause()">pause</button>
+    <button (click)="play()">play</button>
+  </div> -->
 </ion-content>

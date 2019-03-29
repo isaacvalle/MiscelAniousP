@@ -1,9 +1,20 @@
 
+<ion-header [elasticHeader]="myContent">
+
+  <ion-navbar>
+    <ion-title text-center><p id="title">Negocios en {{_up.estado}}</p></ion-title>
+  </ion-navbar>
+
+</ion-header>
 
 
+<ion-content class="card-background-page" fullscreen #myContent>
 
-<ion-content padding>
-
-  <h1>CATALOGO</h1>
+  <ion-card *ngFor="let catalogo of _cp.catalogo"
+            [navParams]="{categoria: catalogo}"
+            [navPush]="porcategoPagina">
+    <img [src]="catalogo.img | imagen"/>
+    <div id="name" class="card-title">{{catalogo.catalogo}}</div>
+  </ion-card>
 
 </ion-content>

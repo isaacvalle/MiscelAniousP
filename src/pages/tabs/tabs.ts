@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import {PrincipalPage, CatalogoPage, MisaldoPage, CompartirPage, CuentaPage} from '../index.paginas';
+import { NavController, NavParams } from 'ionic-angular';
+import { MapaPage, PrincipalPage, CatalogoPage, MisaldoPage, CompartirPage, CuentaPage} from '../index.paginas';
+
 
 
 @Component({
@@ -13,6 +15,11 @@ export class TabsPage {
   tab3 = MisaldoPage;
   tab4 = CompartirPage;
   tab5 = CuentaPage;
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  }
 
 
 

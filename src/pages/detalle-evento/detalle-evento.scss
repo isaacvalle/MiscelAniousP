@@ -1,0 +1,78 @@
+page-detalle-evento {
+  // .title{
+  //   color: #626262;
+  //   font-weight: bold;
+  //   font-size: 18px;
+  //   margin-top: 0px;
+  //   margin-bottom: 0px;
+  // }
+
+  ion-header {
+    .toolbar {
+      position: absolute;
+
+      .toolbar-background {
+        background: transparent;
+      }
+      .toolbar-title {
+        color: black;
+      }
+      .back-button-icon-md {
+        color: white;
+      }
+      .back-button-icon-ios{
+        color: white;
+      }
+    }
+  }
+
+  .nombre{
+    color: #626262;
+    font-size: 2.5em;
+  }
+
+  .txtLetra{
+    font-family: Hind;
+  }
+
+  .header-image{
+    position: relative;
+    text-align: center;
+    margin: 0;
+    width: auto;
+    border-radius: 0;
+  }
+
+  .main-content {
+      padding: 20px;
+      background-color: white;
+      width: 100%;
+      background-color: #f6f6f6;
+  }
+
+  .content{
+    background-color: #f6f6f6;
+  }
+
+  .label.label-md{
+    margin-bottom: 1px;
+  }
+
+  .txt1{
+    padding-top: 2px;
+  }
+
+  div.item-inner{
+    margin-left: 0 !important;
+  }
+
+  .nombreOrg{
+    color: #424242;
+    font-size: 1.2em;
+  }
+
+  .org{
+    color: #8e9093;
+    font-size: 1.5em;
+  }
+}

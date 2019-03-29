@@ -1,0 +1,178 @@
+page-info-evento {
+  .title{
+    // color: #626262;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .colorToolbar{
+    background-color: #f6f6f6;
+  }
+
+  .selects{
+    background-color: #f6f6f6;
+  }
+
+  .select-text{
+    color: color($colors, gris);
+  }
+
+  .fondo{
+    background-color: #f6f6f6;
+  }
+
+  .evento {
+    position: relative;
+    text-align: center;
+    margin: 3px 5px 5px 5px !important;
+    width: auto;
+  }
+
+  .emptyMessage{
+    color: #424242;
+    font-size: 1.4em;
+  }
+
+  .imagen {
+    filter: brightness(.5);
+    height: auto;
+    width: 100%;
+  }
+
+  .imgCont{
+    height: inherit;
+    position: relative;
+  }
+
+  .card-title {
+    position: absolute;
+    width: 100%;
+    bottom: 15%;
+    font-size: 1.5em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 2px;
+    padding-left: 12px;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    bottom: 3%;
+    width: 100%;
+    color: #fff;
+    padding-left: 12px;
+  }
+
+  .estado{
+    font-size: 1.3em;
+    // font-weight: bold;
+  }
+
+  .numero{
+    font-size: 1.6em;
+    font-weight: bolder;
+  }
+
+  .fecha{
+    font-size: .8em;
+    font-weight: bold;
+    color: #ef1414;
+  }
+
+  .descripcion{
+    font-size: 1em;
+    color: #424242;
+  }
+
+  .center{
+    position: relative;
+  }
+
+  .test{
+    position: relative;
+    border-right: 1px solid #ddd;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  // .slide-zoom{
+  //   height:100%;
+  // }
+
+  .swiper-slide {
+    overflow-y: scroll; display: block;
+  }
+
+  //ESTILOS PARA SWIPEABLE TABS
+  .SwipedTabs-indicatorSegment{
+    -webkit-transition: 0.3s all;
+    -moz-transition:  0.3s all;
+    -o-transition:  0.3s all;
+    transition:  0.3s all;
+    transform-origin: top 0 left 0;
+    height: 1px;
+    position: relative;
+    top: -2px;
+    background-color: #ff7473 !important;
+  }
+
+  .SwipedTabs-tabs ion-segment-button{
+    border:none !important;
+    color:gray!important;
+    // background-color:white!important;
+  }
+
+   .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab{
+      color: #ff7473 !important;
+      font-size: 1em;
+  }
+
+  .SwipedTabs-tabs{
+    border-bottom: solid 1px #e6e6e6  !important;
+  }
+
+  ion-slide.categorias{
+    margin-right: 0;
+  }
+
+  ion-scroll[scrollX] {
+    white-space: nowrap;
+    position: relative;
+    .scroll-item {
+      display: inline-block !important;
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      margin-bottom: 0;
+      // padding-left: 2%;
+      // padding-right: 2%;
+      transform: translate(0%, -50%);
+      border-bottom: 5px solid #d1cfcf;
+    }
+  }
+
+  .btnChip{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .chipList{
+    padding: 0 !important;
+  }
+
+  .acomodo{
+    // padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 14px;
+  }
+
+  ::-webkit-scrollbar{
+   display:none;
+  }
+}

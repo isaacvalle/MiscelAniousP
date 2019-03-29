@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar color="naranja">
+    <button ion-button menuToggle start>
+      <lottie-animation-view
+        [options]="lottieConfig"
+        [width]="30"
+        [height]="30"
+        (animCreated)="handleAnimation($event)">
+      </lottie-animation-view>
+    </button>
+    <ion-title><p class="title">Panel de control</p></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="fondo">
+  <div text-center>
+    <img [src]="_np.imagen | imagen"/>
+  </div>
+  <div class="stats">
+    <ion-card>
+      <ion-grid>
+        <ion-row>
+          <ion-col text-center>
+            <h3 class="datos">Transacciones</h3>
+            <ion-icon class="icn" name="custom-transfer"></ion-icon>
+            <h3 class="info">{{this._ep.estadisticas}}</h3>
+          </ion-col>
+          <ion-col text-center>
+            <h3 class="datos">Tot. pagado</h3>
+            <ion-icon class="icn" name="custom-pay"></ion-icon>
+            <h3 class="info">{{this._ep.totPagado}}</h3>
+          </ion-col>
+          <ion-col text-center>
+            <h3 class="datos">Tot. recibido</h3>
+            <ion-icon class="icn" name="custom-charge"></ion-icon>
+            <h3 class="info">{{this._ep.totRecibido}}</h3>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-center>
+            <h3 class="datos">Visitas en app</h3>
+            <ion-icon class="icn" name="custom-view"></ion-icon>
+            <h3 class="info">{{this._ep.totalVisitas}}</h3>
+          </ion-col>
+          <ion-col text-center>
+            <h3 class="datos">Favoritos</h3>
+            <ion-icon class="icn" name="custom-like"></ion-icon>
+            <h3 class="info">{{this._ep.totalLikes}}</h3>
+          </ion-col>
+          <ion-col text-center>
+            <h3 class="datos">Clientes activos</h3>
+            <ion-icon class="icn" name="custom-pay"></ion-icon>
+            <h3 class="info">{{this._ep.totalUsuarios}}</h3>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,18 +1,102 @@
-<!--
-  Generated template for the CuentaPage page.
+<!--ion-header>
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>cuenta</ion-title>
+  <ion-navbar color="azul">
+    <ion-title>Mi cuenta</ion-title>
   </ion-navbar>
 
-</ion-header>
+</ion-header-->
 
 
-<ion-content padding>
+<ion-content class="fondo">
+
+  <ion-card class="qr">
+    <ngx-qrcode
+      [qrc-value]="datoEncriptado"
+      qrc-class = "aclass"
+      qrc-errorCorrectionLevel = "L">
+    </ngx-qrcode>
+  </ion-card>
+
+
+  <ion-card class="card">
+    <div padding text-justify class="card-subtitle">¡Invita a tus amigos a que utilicen tu código cuando se registren en la aplicación para recibir puntos de regalo!</div>
+    <div text-center class="card-title">Tu código: {{_up.codigo}}</div>
+    <div class="socialM">
+      <ion-buttons text-center>
+        <button color="fb"
+          ion-button
+          large
+          (click)="fbShare()"
+          icon-only>
+          <ion-icon name="logo-facebook"></ion-icon>
+        </button>
+        <button color="whats"
+          ion-button
+          large
+          (click)="waShare()"
+          icon-only>
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </button>
+        <button color="twit"
+          ion-button
+          large
+          (click)="ttShare()"
+          icon-only>
+          <ion-icon name="logo-twitter"></ion-icon>
+        </button>
+        <button class="insta"
+          ion-button
+          large
+          (click)="igShare()"
+          icon-only>
+          <ion-icon name="logo-instagram"></ion-icon>
+        </button>
+      </ion-buttons>
+    </div>
+  </ion-card>
+
+  <div padding class="historial">
+    <ion-row class="titulo">
+      <ion-col col-12>
+        <h2>
+          Historial
+        </h2>
+      </ion-col>
+    </ion-row>
+    <div padding-horizontal class="tabla">
+      <ion-row class="detalles">
+        <ion-col col-2></ion-col>
+        <ion-col col-4>
+          <strong class="subt">Fecha</strong>
+        </ion-col>
+        <ion-col col-6>
+          <strong class="subt">Descripción</strong>
+        </ion-col>
+      </ion-row>
+      <ion-row class="info" *ngFor="let item of this._hp.transacciones">
+        <ion-col col-2>
+          <ion-icon class="dar" name="custom-plus" *ngIf="item.tipo == 1" color="suma"></ion-icon>
+          <ion-icon class="quitar" name="custom-minus" *ngIf="item.tipo == 0" color="resta"></ion-icon>
+          <ion-icon class="coin" name="custom-coin" *ngIf="item.tipo == 1" color="suma"></ion-icon>
+          <ion-icon class="coin" name="custom-coin" *ngIf="item.tipo == 0" color="resta"></ion-icon>
+
+        </ion-col>
+        <ion-col col-4 class="fecha">
+          {{item.fecha_hora}}
+        </ion-col>
+        <ion-col col-6>
+          <span *ngIf="item.tipo == 1">Obtuviste {{item.puntos}} puntos en {{item.negocio}}</span>
+          <span *ngIf="item.tipo == 0">Gastaste {{item.puntos}} puntos en {{item.negocio}}</span>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <button ion-button block color="azul" (click)="mostrarMenos()" *ngIf="this._hp.pagina >=2">Mostrar menos</button>
+  </div>
+
+
+  <ion-infinite-scroll (ionInfinite)="siguiente_pagina($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
 </ion-content>

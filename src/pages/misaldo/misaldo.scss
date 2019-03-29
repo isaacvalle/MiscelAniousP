@@ -1,3 +1,41 @@
 page-misaldo {
+  .title{
+    color: #626262;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .categoria{
+    font-size: 16px;
+    color: #f6f6f6;
+    font-weight: bolder;
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+  }
+
+  .txt1{
+    font-size: 18px;
+    font-weight: bold;
+    color: #393e46;
+  }
+
+  .txt2{
+    font-weight: bold;
+    color: #626262;
+  }
+
+  .content{
+    background-color: #f6f6f6;
+  }
+
+  .item ion-thumbnail ion-img,.item ion-thumbnail img {
+    width: auto !important;
+  }
+  // img{
+  //   border-radius: 50%;
+  //   position: absolute;
+  // }
 
 }

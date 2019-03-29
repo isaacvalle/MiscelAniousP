@@ -1,0 +1,44 @@
+
+<ion-header [elasticHeader]="myContent">
+
+  <ion-navbar>
+    <ion-title *ngIf="_up.municipio == 'vacio'"><p id="title">{{categoria.catalogo}}</p></ion-title>
+    <ion-title *ngIf="_up.municipio != 'vacio'"><p id="title">{{_up.municipio}}</p></ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="fondo" fullscreen #myContent>
+
+  <ion-card id="cards" *ngFor="let item of _cp.negocios">
+    <ion-row>
+      <ion-col id="image">
+        <img [src]="item.img | imagen"/>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-3 text-center>
+        <p class="txth1">Recibe</p>
+        <p class="txth1">{{item.promocion}}</p>
+        <p class="txtp">Puntos</p>
+      </ion-col>
+      <ion-col col-7 text-center>
+        <button ion-button class="icn"
+                color="line"
+                outline
+                block
+                [navParams]="{infonegocio: item}"
+                [navPush]="paginaInfoNegocio">
+            <p class="txtbtn">Visitar perfil de negocio</p>
+            <ion-icon name="share-alt" class="icono"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-2 text-center>
+        ICONO
+      </ion-col>
+    </ion-row>
+</ion-card>
+
+</ion-content>

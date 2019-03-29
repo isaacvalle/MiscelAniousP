@@ -1,59 +1,74 @@
 
-<ion-header>
+<ion-header no-border>
 
   <ion-navbar>
-    <ion-title>REGISTRO</ion-title>
+
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <p class="title" padding>Ingresa tus datos</p>
+    <div padding>
+      <div class="transparent">
+          <ion-label class="lb">Nombre</ion-label>
+          <ion-input type="text" [(ngModel)]="nombre" class="ipt" required></ion-input>
+      </div>
 
+      <div class="transparent">
+          <ion-label class="lb">Correo electrónico</ion-label>
+          <ion-input type="email" [(ngModel)]="email" class="ipt" required></ion-input>
+      </div>
 
+      <div class="transparent">
+          <ion-label class="lb">Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario" class="ipt" required></ion-input>
+      </div>
 
-      <ion-item>
-          <ion-label stacked><p class="lb">Nombre</p></ion-label>
-          <ion-input type="text" [(ngModel)]="nombre" required></ion-input>
-      </ion-item>
+      <div class="transparent">
+          <ion-label class="lb">Teléfono</ion-label>
+          <ion-input type="number" [(ngModel)]="telefono" class="ipt" required></ion-input>
+      </div>
 
+      <div class="transparent">
+          <ion-label class="lb">Entidad federativa</ion-label>
+          <ion-input type="text" [(ngModel)]="estado" class="ipt" required></ion-input>
+      </div>
 
-      <ion-item>
-          <ion-label stacked><p class="lb">Email</p></ion-label>
-          <ion-input type="email" required [(ngModel)]="email"></ion-input>
-      </ion-item>
+      <div class="transparent">
+          <ion-label class="lb">Municipio</ion-label>
+          <ion-input type="text" [(ngModel)]="municipio" class="ipt" required></ion-input>
+      </div>
 
-      <ion-item>
-          <ion-label stacked><p class="lb">Usuario</p></ion-label>
-          <ion-input type="text" required [(ngModel)]="usuario"></ion-input>
-      </ion-item>
+      <div class="transparent">
+          <ion-label class="lb">¿Te invitó un amigo?<br><span class="ph">(escribe su código)</span></ion-label>
+          <ion-input type="text" [(ngModel)]="codigo" class="ipt"></ion-input>
+      </div>
 
-      <ion-item>
-          <ion-label stacked><p class="lb">Contraseña</p></ion-label>
-          <ion-input type="password" required [(ngModel)]="contrasena"></ion-input>
-      </ion-item>
+      <div class="transparent">
+          <ion-label class="lb">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="contrasena" class="ipt" required></ion-input>
+      </div>
 
-      <p class="parrafo" *ngIf="contrasena.length < 5"> La contrasña tiene que ser mayor a 5 caracteres!</p>
+      <p class="parrafo" *ngIf="contrasena.length < 5">¡La contraseña debe tener al menos 5 caracteres!</p>
 
+      <div class="transparent">
+          <ion-label class="lb">Repite contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="confcontrasena" class="ipt" required></ion-input>
+      </div>
+      <br>
+    </div>
 
-      <ion-item>
-          <ion-label stacked><p class="lb">Repetir contraseña</p></ion-label>
-          <ion-input type="password" required [(ngModel)]="confcontrasena"></ion-input>
-      </ion-item>
-
-
-
-
-
-<ion-buttons end>
-<button ion-button
-        [disabled]="contrasena.length < 5"
-        color="danger"
-        (click)="registrar()">
-
-    REGISTRAR
-</button>
-</ion-buttons>
-
+      <ion-buttons end>
+      <button ion-button
+              color="naranja"
+              round
+              class="btn-registrar"
+              [disabled]="contrasena.length < 5"
+              (click)="registrar()">
+          REGISTRAR
+      </button>
+      </ion-buttons>
 
 </ion-content>

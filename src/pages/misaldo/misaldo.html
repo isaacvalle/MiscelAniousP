@@ -2,12 +2,67 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title text-center>Mi saldo</ion-title>
+    <ion-title text-center><p class="title">Mi saldo</p></ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-refresher (ionRefresh)="recargar_pagina($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list class="categoria" *ngFor="let item of _cp.catalogo">
+    <ion-item-divider no-border sticky [style.background-color]="item.color"><p class="categoria">{{item.catalogo}}</p></ion-item-divider>
+    <div *ngFor="let item2 of _pp.pntsUsuarioNegocio">
+      <ion-item class="content" *ngIf="item.catalogo == item2.catalogo">
+        <ion-thumbnail rounded item-start>
+          <img [src]="item2.img | imagen">
+        </ion-thumbnail>
+        <p class="txt1">{{item2.negocio}}</p>
+        <p class="txt2">{{item2.puntos}} Puntos</p>
+        <button ion-button clear item-end color="naranja"
+                [navParams]="{datos: item2}"
+                [navPush]="paginaCuentaPuntos">
+          <ion-icon name="ios-arrow-forward" class="icono"></ion-icon>
+        </button>
+      </ion-item>
+    </div>
+  </ion-list>
+
+  <!-- <ion-item-group *ngFor="let item of _cp.catalogo">
+    <ion-item-divider sticky [style.background-color]="item.color"><p class="categoria">{{item.catalogo}}</p></ion-item-divider>
+
+    <div *ngFor="let item2 of _pp.pntsUsuarioNegocio">
+
+      <ion-item *ngIf="item.catalogo == item2.catalogo">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6 class="col1">{{item2.negocio}}</ion-col>
+
+              <ion-col col-4 class="col2">
+                  <p text-end><strong>{{item2.puntos}} Puntos</strong></p>
+
+              </ion-col>
+
+              <ion-col col-2 class="clbtn" text-center>
+                <button ion-button class="icn"
+                        color="naranja"
+                        small
+                        [navParams]="{datos: item2}"
+                        [navPush]="paginaCuentaPuntos">
+                    <ion-icon name="ios-arrow-forward" class="icono"></ion-icon>
+                </button>
+              </ion-col>
+
+            </ion-row>
+          </ion-grid>
+      </ion-item>
+
+    </div>
+
+  </ion-item-group> -->
+
 
 </ion-content>

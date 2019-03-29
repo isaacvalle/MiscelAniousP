@@ -1,23 +1,83 @@
 page-home {
+  .fondo{
+    background:url('../../assets/img/globos.jpg');
+    -webkit-background-size: 280% auto;
+    // background-image: linear-gradient(to bottom right, #ff6e7f, #bfe9ff);
+    // background: linear-gradient(to bottom right, #FDC830 0%, #F37335 100%);//citrus peel COMBINA
+    // background: linear-gradient(to bottom right, #8A2387 0%, #E94057 50%, #F27121 100%);//witerap
+    // background: linear-gradient(to bottom right, #C6FFDD 0%, #FBD786 50%, #f7797d 100%);//primer Gdt
+  }
+
+  // .scroll-content {
+  //   position: static;
+  //   contain: none;
+  // }
+
+  ion-input{
+    color: white;
+    border-bottom-color: white;
+    box-shadow: none;
+    font-size: 20px;
+  }
+
+  #lb{
+    font-size: 20px;
+    color: white;
+    // font-weight: bold;
+    margin-bottom: 0px;
+    font-weight: bold;
+  }
+
+  #transparent{
+    padding:0px !important;
+    border-bottom:none !important;
+    border-top:none;
+    margin-top:10px;
+    background: none;
+    border-bottom: 5px solid white;
+    box-shadow: none;
+  }
+
+  .itm-rd{
+    text-decoration: underline;
+    margin-top: 20px;
+    color: white;
+    font-size: 14px;
+  }
+
     img{
-      width: 55%;
+      width: 75%;
       height: auto;
+      margin-top: 5%;
       margin-bottom: 5%;
     }
 
     .icon-inicio{
-      font-size: 40px;
-      color: #000;
-    }
-    ion-input{
-      font-size: 20px;
+      font-size: 35px;
+      color: #062743;
     }
 
     .btn-ingresar{
-      margin-top: 10%;
+      // background-color: #0f4471;
+      margin-top: 20px;
+      height: 35px;
+      font-size: 14px;
     }
 
     .btn-registrar{
-      margin-top: 20%;
+      // border: 1px solid #bdc3c7;
+      margin-top: 20px;
+      height: 35px;
+      font-size: 14px;
+      color: white;
     }
+
+    .btn-loginnegocio{
+      // background-color: #fc3c3c;
+      margin-top: 20px;
+      height: 35px;
+      font-size: 14px;
+    }
+
+
 }

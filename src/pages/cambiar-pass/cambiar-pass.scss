@@ -1,0 +1,80 @@
+page-cambiar-pass {
+  ion-header {
+    .toolbar {
+      position: absolute;
+
+      .toolbar-background {
+        background: transparent;
+      }
+      .toolbar-title {
+        color: black;
+      }
+      .back-button-icon-md {
+        color: white;
+      }
+      .back-button-icon-ios{
+        color: white;
+      }
+    }
+  }
+
+  ion-content{
+    background-image:url('https://picsum.photos/3900/2500/?blur&gravity=east&image=911');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  #cont{
+    padding-top: 0px;
+  }
+
+  #title{
+    font-size:25px;
+    margin-top:30px;
+    margin-bottom: 5px;
+    color: white;
+    font-weight: bold;
+  }
+
+  #lb{
+    font-size: 20px;
+    color: white;
+    // font-weight: bold;
+    margin-bottom: 0px;
+    font-weight: bold;
+  }
+
+  #transparent{
+    padding:0px !important;
+    border-bottom:none !important;
+    border-top:none;
+    // font-size:14px;
+    margin-top:10px;
+    background: none;
+    border-bottom: 5px solid white;
+    box-shadow: none;
+  }
+
+  ion-input{
+    color: white;
+    border-bottom-color: white;
+    box-shadow: none;
+    font-size: 20px;
+    color: white;
+  }
+
+  .parrafo{
+    color:#f53d3d;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .btn-aceptar{
+    // background-color: #fc3c3c;
+    margin-top: 20px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+}

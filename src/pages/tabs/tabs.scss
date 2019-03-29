@@ -1,3 +1,40 @@
 page-tabs {
+  .tabbar {
+  	a.tab-button[aria-selected=true]:nth-of-type(1) {
+  		color: #F48434;
+  		.tab-button-icon {
+  			color: #F48434;
+        font-size: 37px;
+  		}
+  	}
+  	a.tab-button[aria-selected=true]:nth-of-type(2) {
+  		color: #F48434;
+  		.tab-button-icon {
+  			color: #F48434;
+        font-size: 37px;
+  		}
+  	}
+  	a.tab-button[aria-selected=true]:nth-of-type(3) {
+  		color: #F48434;
+  		.tab-button-icon {
+  			color: #F48434;
+        font-size: 37px;
+  		}
+  	}
+  	a.tab-button[aria-selected=true]:nth-of-type(4) {
+  		color: #F48434;
+  		.tab-button-icon {
+  			color: #F48434;
+        font-size: 37px;
+  		}
+  	}
+  	a.tab-button[aria-selected=true]:nth-of-type(5) {
+  		color: #F48434;
+  		.tab-button-icon {
+  			color: #F48434;
+        font-size: 37px;
+  		}
+  	}
 
+  }
 }

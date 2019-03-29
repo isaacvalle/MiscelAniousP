@@ -1,0 +1,138 @@
+page-info-negocio {
+  .scroll-content{
+    margin-top: 0 !important;
+    padding-top: 0px;
+  }
+
+  ion-navbar{
+    .back-button-icon{
+      //text-shadow: 0 0 5px #000000;
+      color:rgb(96, 96, 96);
+    }
+    .toolbar-title.toolbar-title-ios,.toolbar-title.toolbar-title-md{
+      color: transparent;
+    }
+  }
+  .show-background{
+    border-style: none;
+    background: transparent; //color de la barra... se debe hacer dinamico
+  }
+
+  .header-ios .toolbar-background-ios,.toolbar-background-md{
+    border-style: none;
+    background: none;
+    border-color: rgba(0, 0, 0, 0)
+
+  }
+
+  #title{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .fondo{
+    background-color: #f6f6f6;
+  }
+
+  #delimitador{
+    border-bottom: solid 1px #ddd;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+
+  .trayecto{
+    margin-top: 8px;
+    height: 35px;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  #map_canvas{
+    display: flex;
+    align-items: flex-end;
+  }
+
+  ion-icon{
+    color: #626262;
+  }
+
+  h3{
+    color: #626262;
+  }
+
+  .iconotel{
+    font-size: 30px;
+  }
+
+  .txth1{
+    font-size: 30px;
+    color: #393e46;
+    font-weight: bolder;
+  }
+
+  .txtp{
+    color: #F2B41C;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .txth2{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #626262;
+    font-family: Hind;
+  }
+
+  .iconotel{
+    color: white;
+  }
+
+  .card-subtitle {
+    // margin-bottom: 4px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    font-size: 1.0em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    background: rgba(0,0,0, 0.6);
+    height: 35px;
+  }
+
+  .cardLike{
+    position: relative;
+    top: -5px;
+  }
+
+  button.icn.disable-hover.item-button.button,.icn.item-button.button{
+    height: 40px;
+    // position: absolute;
+    // top: 47%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    // border-radius: 5px;
+    // color: #626262;
+  }
+
+  .icn{
+    margin-right: 0 !important;
+  }
+
+  .reco{
+    margin-left: 0 !important;
+  }
+
+  button.swiper-pagination-bullet.swiper-pagination-bullet-active{
+    background-color: #f57a20;
+  }
+
+  .galeria{
+    height: inherit;
+  }
+
+}

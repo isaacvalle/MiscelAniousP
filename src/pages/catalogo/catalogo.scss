@@ -1,3 +1,40 @@
 page-catalogo {
 
+  #title{
+    color: #626262;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  #name{
+    font-family: Cards;
+    font-weight: 400;
+    font-size: 50px;
+  }
+
+  ion-card {
+    position: relative;
+    text-align: center;
+    margin: 0 0 3px 0 !important;
+    width: 100% !important;
+    border-radius: 0px !important;
+
+  }
+
+  img{
+    filter:brightness(0.7);
+  }
+
+  .card-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4.0em;
+    font-weight: bold;
+    color: #ebebeb;
+  }
+
 }

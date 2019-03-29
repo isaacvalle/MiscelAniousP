@@ -1,0 +1,44 @@
+
+<ion-header no-border>
+
+  <ion-navbar>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p id="title" padding>Cambiar contraseña</p>
+  <div padding id="cont">
+    <ion-item id="transparent">
+        <ion-label floating id="lb">Correo electrónico</ion-label>
+        <ion-input type="email" [(ngModel)]="email" required></ion-input>
+    </ion-item>
+
+    <ion-item id="transparent">
+        <ion-label floating id="lb">Nueva contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="contrasena" required></ion-input>
+    </ion-item>
+
+    <p class="parrafo" *ngIf="contrasena.length < 5" padding>¡La contraseña debe tener al menos 5 caracteres!</p>
+
+    <ion-item id="transparent">
+        <ion-label floating id="lb">Repetir nueva contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="confcontrasena" required></ion-input>
+    </ion-item>
+    <br>
+  </div>
+
+  <ion-buttons end>
+  <button ion-button
+          color="naranja"
+          round
+          class="btn-aceptar"
+          [disabled]="contrasena.length < 5"
+          (click)="cambiar()">
+      ACEPTAR
+  </button>
+  </ion-buttons>
+
+</ion-content>

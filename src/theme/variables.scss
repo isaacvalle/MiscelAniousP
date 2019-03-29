@@ -39,9 +39,24 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  naranja:    #CB6D02
+  naranja:    #f48434,
+  azul:       #049cdd,
+  line:       #bdc3c7,
+  twit:       #1dcaff,
+  whats:      #128c7e,
+  fb:         #3b5998,
+  resta:      #ef1414,
+  suma:       #53b029,
+  white:      #fff,
+  gray:       #EFF2F7,
+  even:       #47b8e0,
+  chip:       #ffc952,
+  btne:       #989898,
+  dChip:      #e0e0e0,
+  gris:       #424242,
+  select:     #ff7473
 );
-
+// #CB6D02
 
 // App iOS Variables
 // --------------------------------------------------
@@ -52,16 +67,21 @@ $colors: (
 
 //---- ESTAS LINEAS YO SE LAS AGREGUE ----------------
 
-/*$text-input-md-highlight-color-invalid: transparent;
-$text-input-md-highlight-color-valid: transparent;
-$text-input-md-show-invalid-highlight: transparent;*/
+$text-input-highlight-color-invalid: transparent;
+$text-input-highlight-color-valid: transparent;
+$text-input-md-show-invalid-highlight: transparent;
 $text-input-md-highlight-color: transparent;
-//$text-input-md-show-valid-highlight: transparent;
+$text-input-md-show-valid-highlight: transparent;
+$text-input-md-show-focus-highlight: transparent;
+
+$text-input-ios-highlight-color: transparent;
+$text-input-ios-show-focus-highlight: transparent;
 
 //-------------------------------------------------------
-
-
-
+// $searchbar-ios-toolbar-input-background: rgba(63, 5, 157, 0.08);
+$searchbar-ios-background-color: #e0e0e0;
+$searchbar-md-background-color: #e0e0e0;
+// $searchbar-ios-input-background-color: rgba(255, 245, 210, 0.4);
 
 
 // App Material Design Variables

@@ -1,0 +1,163 @@
+<ion-header>
+  <ion-navbar color="even">
+    <ion-buttons left icon-only>
+      <button color="white" ion-button [menuToggle]="menuActive()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title><p class="title">Eventos</p></ion-title>
+    <ion-buttons end icon-only>
+      <button color="white" ion-button (click)="setLocation()">
+        <ion-icon name="custom-mark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar class="colorToolbar" no-border-top mode="md">
+    <ion-item class="selects" *ngIf="markPressed">
+      <ion-label color="select">Estado</ion-label>
+      <ion-select [(ngModel)]="estado" (ionChange)="guardarEstado()" cancelText="Cancelar" okText="Aceptar">
+        <ion-option value="{{item.estado}}" *ngFor="let item of _cp.estados">{{item.estado}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="selects" *ngIf="markPressed">
+      <ion-label color="select">Municipio</ion-label>
+      <ion-select [(ngModel)]="municipio" (ionChange)="guardarMunicipio()" cancelText="Cancelar" okText="Aceptar">
+        <ion-option value="{{item.nombre_municipio}}" *ngFor="let item of _cp.municipios">{{item.nombre_municipio}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-segment mode="md" color="danger" class="SwipedTabs-tabs">
+      <ion-segment-button *ngFor='let tab of tabs ; let i = index ' value="ignoreMe" (click)="selectTab(i)"
+                          [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }'>
+        {{tab}}
+      </ion-segment-button>
+    </ion-segment>
+    <div id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="fondo">
+  <ion-scroll scrollX style="height: 60px;" class="scroll-item">
+    <div class="acomodo">
+      <span class="chipList" *ngFor="let item of this._evp.categorias; let i = index">
+        <cs-ghost class="cheap isLoading">
+          <ion-chip [color]="isPressed==true ? 'chip': 'dChip'" tappable>
+            <ion-label [color]="isPressed==true ? 'white': 'gris'" class="lblChip" (click)="handleChip(item, i)">
+              <strong>{{item.nombre}}</strong>
+            </ion-label>
+            <button *ngIf="isPressed" ion-button clear color="white" class="btnChip" (click)="delete()">
+              <ion-icon name="close-circle"></ion-icon>
+            </button>
+          </ion-chip>
+        </cs-ghost>
+      </span>
+    </div>
+  </ion-scroll>
+  <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
+              (ionSlideWillChange)="updateIndicatorPosition()"
+              (ionSlideDidChange)="updateIndicatorPosition()"
+              (pan)="updateIndicatorPosition()"
+              [pager]="false">
+    <ion-slide class="categorias">
+      <div *ngIf="this._evp.eventosGral.length == 0">
+        <lottie-animation-view
+          [options]="lottieConfig"
+          [width]="200"
+          [height]="200"
+          (animCreated)="handleAnimation($event)">
+        </lottie-animation-view>
+        <span class="emptyMessage">Eventos próximamente</span>
+      </div>
+      <div *ngFor="let eventos of this._evp.eventosGral">
+        <ion-card *ngIf="this._evp.eventosGral.length != 0" class="evento">
+          <div class="imgCont">
+            <cs-ghost class="img square isLoading">
+              <img class="imagen" src="https://picsum.photos/900/500?image=449">
+              <div class="card-title" text-left>{{eventos.evento}}</div>
+              <div class="card-subtitle" text-left><span class="estado">{{eventos.estado}}</span> | {{eventos.nombre}}</div>
+            </cs-ghost>
+          </div>
+          <ion-grid no-padding>
+            <ion-row>
+              <ion-col col-2 class="center">
+                <div class="test" text-uppercase>
+                  <cs-ghost class="xs isLoading">
+                    <span class="fecha">{{eventos.diainicio}}</span><br>
+                  </cs-ghost>
+                  <cs-ghost class="xs isLoading">
+                    <span class="numero">{{eventos.numeroinicio}}</span><br>
+                  </cs-ghost>
+                  <cs-ghost class="xs isLoading">
+                    <span class="fecha">{{eventos.mesinicio}}</span>
+                  </cs-ghost>
+                </div>
+              </ion-col>
+              <ion-col col-10>
+                <ion-row>
+                  <ion-col text-justify padding-right padding-top>
+                    <cs-ghost class="paragraph isLoading">
+                      <span class="descripcion" *ngIf="eventos.descripcion.length > 100">{{eventos.descripcion.substring(0, 101)}}...</span>
+                    </cs-ghost>
+                    <cs-ghost class="paragraph isLoading">
+                      <span class="descripcion" *ngIf="eventos.descripcion.length <= 100">{{eventos.descripcion}}</span>
+                    </cs-ghost>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col text-right>
+                    <cs-ghost class="md isLoading">
+                      <button ion-button outline round icon-right small color="gris"
+                        [navPush]="detalleEvento"
+                        [navParams]="{datosEvento: eventos}">
+                        Ver evento
+                        <ion-icon name="share-alt"></ion-icon>
+                      </button>
+                    </cs-ghost>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </div>
+    </ion-slide>
+    <ion-slide class="categorias">
+      <ion-card class="evento" *ngFor="let eventosDia of this._evp.eventosActuales">
+        <div class="imgCont">
+          <img class="imagen" src="https://picsum.photos/900/500?image=883">
+          <div class="card-title" text-left>{{eventosDia.evento}}</div>
+          <div class="card-subtitle" text-left><span class="estado">{{eventosDia.estado}}</span> | {{eventosDia.nombre}}</div>
+        </div>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-2 class="center">
+              <div class="test" text-uppercase>
+                <span class="fecha">{{eventosDia.diainicio}}</span><br><span class="numero">{{eventosDia.numeroinicio}}</span><br><span class="fecha">{{eventosDia.mesinicio}}</span>
+              </div>
+            </ion-col>
+            <ion-col col-10>
+              <ion-row>
+                <ion-col text-justify padding-right padding-top>
+                  <span class="descripcion" *ngIf="eventosDia.descripcion.length <= 100">{{eventosDia.descripcion}}</span>
+                  <span class="descripcion" *ngIf="eventosDia.descripcion.length > 100">{{eventosDia.descripcion.substring(0, 101)}}...</span>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col text-right>
+                  <button ion-button outline round icon-right small color="gris"
+                          [navPush]="detalleEvento"
+                          [navParams]="{datosEvento: eventosDia}">
+                    Ver evento
+                    <ion-icon name="share-alt"></ion-icon>
+                  </button>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

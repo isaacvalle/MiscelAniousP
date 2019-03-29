@@ -1,0 +1,32 @@
+page-panel-negocio {
+  .title{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .fondo{
+    background-color: #EFF2F7;
+  }
+
+  .datos{
+    color: #626262;
+    font-weight: bold;
+  }
+
+  .info{
+    font-weight: bold;
+    color: #0aa0f6;
+  }
+
+  .icn{
+    height: 2em;
+    width: 2em;
+  }
+
+  ion-icon.icn.icon{
+    background-color: transparent;
+  }
+}

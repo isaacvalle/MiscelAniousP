@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><p class="title">{{datosinfo.negocio}}</p></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="fondo">
+
+
+  <ion-card padding class="card">
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center>
+          <h3 class="datos">Negocio</h3>
+          <ion-icon class="icn1" name="custom-mark"></ion-icon>
+          <h3 class="info">{{datosinfo.negocio}}</h3>
+        </ion-col>
+        <ion-col text-center>
+          <h3 class="datos">Puntos</h3>
+          <h2><ion-icon class="icn2" name="medal"></ion-icon></h2>
+          <h3 class="info">{{datosinfo.puntos}}</h3>
+        </ion-col>
+        <ion-col text-center>
+          <h3 class="datos">Categoría</h3>
+          <h2><ion-icon class="icn3" name="pricetags"></ion-icon></h2>
+          <h3 class="info">{{datosinfo.catalogo}}</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+
+            <ngx-qrcode
+              [qrc-value]="datoEncriptado"
+              qrc-class = "aclass"
+              qrc-errorCorrectionLevel = "L">
+            </ngx-qrcode>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div>
+      <p class="instruccion">Presenta éste código al encargado del negocio y reclama tus puntos de regalo. </p>
+    </div>
+  </ion-card>
+
+</ion-content>

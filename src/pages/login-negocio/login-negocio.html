@@ -1,0 +1,43 @@
+
+<ion-header no-border>
+
+  <ion-navbar>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding text-center>
+  <div class="logo">
+    <img src="assets/img/logomap.png">
+  </div>
+
+  <div class="inputs">
+    <ion-item id="transparent">
+      <ion-label floating id="lb">Usuario</ion-label>
+      <ion-input [(ngModel)]="user" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item id="transparent">
+      <ion-label floating id="lb">Contraseña</ion-label>
+      <ion-input [(ngModel)]="pass" type="password"></ion-input>
+    </ion-item>
+  </div>
+  <br>
+
+  <!-- <div text-right>
+    <button ion-button color="naranja" (click)="ingresar()" end>INGRESAR</button>
+  </div> -->
+
+  <ion-buttons end>
+  <button ion-button
+          color="azul"
+          block
+          class="btn-ingresar"
+          (click)="ingresar()">
+      INGRESAR
+  </button>
+  </ion-buttons>
+
+</ion-content>

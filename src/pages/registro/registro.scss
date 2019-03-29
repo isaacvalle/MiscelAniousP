@@ -1,19 +1,74 @@
 page-registro {
+  ion-header {
+    .toolbar {
+      position: absolute;
+
+      .toolbar-background {
+        background: transparent;
+      }
+      .toolbar-title {
+        color: black;
+      }
+      .back-button-icon-md {
+        color: white;
+      }
+      .back-button-icon-ios{
+        color: white;
+      }
+    }
+  }
+
+  ion-content{
+    background-image:url('https://picsum.photos/3700/2500/?blur&gravity=east&image=654');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+
+  .title{
+    font-size:25px;
+    margin-top:30px;
+    margin-bottom: 5px;
+    color: white;
+    font-weight: bold;
+  }
 
   .lb{
-    font-size: 15px;
-    color: #000;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .ipt{
+    border: 1px white solid;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .ph{
+    font-size: 11px;
+  }
+
+  .transparent{
+    margin-bottom: 35px;
   }
 
   ion-input{
-    border: 1px solid;
-    border-radius: 5px;
-    border-color: #999;
+    color: white;
+    font-size: 1.2em;
   }
   .parrafo{
     color:#f53d3d;
+    font-weight: bold;
+    font-size: 18px;
   }
 
-
+  .btn-registrar{
+    // background-color: #fc3c3c;
+    margin-top: 18px;
+    height: 35px;
+    font-size: 14px;
+  }
 
 }

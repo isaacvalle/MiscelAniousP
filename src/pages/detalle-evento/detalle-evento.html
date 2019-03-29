@@ -1,0 +1,72 @@
+<ion-header no-border>
+
+  <ion-navbar>
+    <!-- <ion-title><p class="title">{{this.infoEvento.evento}}</p></ion-title> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content parallax-header class="fondo">
+
+  <ion-card class="header-image" no-border>
+    <img class="imagen" src="https://picsum.photos/900/500?image=800">
+  </ion-card>
+
+  <div class="main-content" padding>
+    <ion-chip color="chip">
+      <ion-label color="white">
+        <strong>{{infoEvento.nombre}}</strong>
+      </ion-label>
+    </ion-chip>
+    <div padding-left padding-top class="nombre">
+      <span class="txtLetra">{{this.infoEvento.evento}}</span>
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12>
+          <ion-item class="content" no-padding>
+            <ion-icon name="custom-calendar" color="naranja" item-start></ion-icon>
+            <h2 class="txt1" *ngIf="infoEvento.fechafin == '' || infoEvento.fechafin == infoEvento.fechainicio">{{infoEvento.fechainicio}}</h2>
+            <h2 class="txt1" *ngIf="infoEvento.fechafin != '' && infoEvento.fechafin != infoEvento.fechainicio" text-wrap>{{infoEvento.fechainicio}} <br> - {{infoEvento.fechafin}}</h2>
+            <p>{{infoEvento.horario}}</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-item class="content" no-padding text-wrap text-justify>
+            <ion-icon name="custom-mark" color="naranja" item-start></ion-icon>
+            <h2 class="txt1">{{infoEvento.estado}}, {{infoEvento.nombre_municipio}}</h2>
+            <p>{{infoEvento.lugar}}</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-item class="content" no-padding>
+            <ion-icon name="pricetag" color="naranja" item-start></ion-icon>
+            <h2 class="txt1">Entrada</h2>
+            <p>{{infoEvento.costo}}</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-item class="content" no-padding text-wrap text-justify>
+            <ion-icon name="bulb" color="naranja" item-start></ion-icon>
+            <h2 class="txt1">Acerca del evento</h2>
+            <p>{{infoEvento.descripcion}}</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div padding>
+      <span class="nombreOrg">Organizador</span>
+      <br>
+      <br>
+      <span class="org">{{infoEvento.organizador}}</span>
+    </div>
+  </div>
+
+</ion-content>

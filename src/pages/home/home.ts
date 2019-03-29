@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, Platform, Keyboard,MenuController } from 'ionic-angular';
 
 import {UsuarioProvider} from '../../providers/index.providers';
 
-import {RegistroPage, TabsPage} from '../index.paginas';
+import {RegistroPage, TabsPage, LoginNegocioPage, CambiarPassPage} from '../index.paginas';
+
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 @Component({
   selector: 'page-home',
@@ -11,43 +13,47 @@ import {RegistroPage, TabsPage} from '../index.paginas';
 })
 export class HomePage {
 
-  usuario:string = "";
+  correo:string = "";
   contrasena:string = "";
-
   paginaRegistro:any = RegistroPage;
+  paginaloginNegocio:any = LoginNegocioPage;
+  paginaCambiarpass:any = CambiarPassPage;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, private _up:UsuarioProvider) {
+  applyClass:boolean;
+
+  constructor(public menuCtrl: MenuController, public keyboard: Keyboard, public navCtrl: NavController, private _up:UsuarioProvider, private platform: Platform, private screenOrientation: ScreenOrientation) {
 
   }
 
+  ionViewWillEnter(){
+    this.bloquearRotacion();
+    if(this.keyboard.isOpen()){
+      this.applyClass = true;
+    };
+    this.menuCtrl.swipeEnable(false);
+  }
+
+  bloquearRotacion(){
+    if(this.platform.is("cordova")){
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+    }
+  }
+
   ingresar(){
-
-    //VALIDACION DE INGRESAR DATOS EN LA APLICACION
-    /*if(this.usuario == "" || this.contrasena == ""){
-
-      this.alertCtrl.create({
-            title:"ERROR!",
-            subTitle: "No has ingresado tus datos",
-            buttons: ["Ok"]
-      }).present();
-
-      return;
-
-    }*/
-
-    //this._up.ingresar(this.usuario, this.contrasena);
-
-
-    this._up.ingresar(this.usuario, this.contrasena).subscribe(()=>{
+    this._up.ingresar(this.correo, this.contrasena).subscribe(()=>{
       if(this._up.activo()){
-
-
           this.navCtrl.setRoot(TabsPage);
-        //this.modalCtrl.create(TabsPage).present();
-
       }
     })
+  }
 
+  ngAfterViewInit(){
+    let tabs = document.querySelectorAll('.show-tabbar');
+    if(tabs !== null){
+      Object.keys(tabs).map((key) => {
+        tabs[key].style.display = 'none';
+      })
+    }
   }
 
 }

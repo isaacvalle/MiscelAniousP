@@ -1,0 +1,66 @@
+page-home-negocio {
+  .title{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .fondo{
+    background-color: #EFF2F7;
+  }
+  .info{
+    border-top: solid 1px #ddd;
+    background-color: #F9F9F9;
+  }
+  .operacion {
+    height: 35px;
+    padding: 4px 20px;
+    font-family: sans-serif;
+  }
+  .detalles {
+    background-color: #ECECEB;
+  }
+  .tabla {
+    margin-bottom: 35px;
+  }
+  .historial {
+    color: #393939;
+  }
+  .flex-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  #pago {
+    background-color: #97DE95;
+  }
+  #cobro {
+    background-color: #E46161;
+  }
+  ion-icon#dar {
+        font-size: 8px; //Preferred size here
+        position: absolute;
+        top: 50%;
+        transform: translate(10%, -50%);
+
+    }
+  ion-icon#quitar {
+        font-size: 8px; //Preferred size here
+        position: absolute;
+        top: 50%;
+        transform: translate(10%, -50%);
+
+    }
+  ion-icon#coin {
+        font-size: 23px; //Preferred size here
+        position: absolute;
+        top: 50%;
+        transform: translate(45%, -50%);
+
+    }
+  ion-col#fecha {
+    margin: auto;
+  }
+
+}

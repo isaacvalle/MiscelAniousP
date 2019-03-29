@@ -1,0 +1,61 @@
+page-por-categoria {
+  .fondo{
+    background-color: #f6f6f6;
+  }
+
+  #title{
+    color: #626262;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  #cards{
+    position: relative;
+    margin: 0 0 7px 0 !important;
+    width: 100% !important;
+    background-color: white;
+  }
+
+  #image{
+    padding: 0px !important;
+  }
+
+  #txtbtn{
+    font-family: Hind;
+  }
+
+  .txth1{
+    font-size: 16px;
+    color: #393e46;
+    font-weight: bolder;
+  }
+
+  .txtp{
+    color: #fe5f55;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .icn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    color: #626262;
+  }
+
+  .icono{
+    font-size: 20px;
+    margin-left: 5px;
+  }
+
+  .txtbtn{
+    font-family: Hind;
+    font-size: 12px;
+    // margin-bottom: 0;
+  }
+
+}
